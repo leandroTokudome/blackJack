@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Jack</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="menu">
+
+        <div class="boxMenu">
+            <h2>Número de Jogadores</h2>
+            <select name="" id="numeroJogadores">
+                <option value="">1 Jogador</option>
+                <option value="">2 Jogadores</option>
+                <option value="">3 Jogadores</option>
+                <option value="">4 Jogadores</option>
+            </select>
+        </div>
+        <div class="boxMenu">
+            <h2>Número Inicial de Fichas</h2>
+            <select id="fichasInicial">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="boxMenu">
+            <h2>Aposta automática</h2>
+            <select id="apostaAutomatica">
+                <option value="">Ativado</option>
+                <option value="">Desativado</option>
+            </select>
+        </div>
+        <div class="boxMenu">
+            <h2>Modo de Jogo</h2>
+            <select id="modoJogo" onchange= mostrarInput()>
+                <option value="infinito">Infinito</option>
+                <option value="competitivo">Competitivo</option>
+            </select>
+            <div id="meta">
+                <h2>Valor da Meta</h2>
+                <select id="valorMeta">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="jogo">
+
+    </div>
+</body>
+</html>
