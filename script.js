@@ -14,6 +14,12 @@ function mostrarInput() {
     } else {
         meta.style.display = `none`
     }
+
+    if (apostaAutomatica.value == `ativadoAutomatico`) {
+        fichasAutomaticoDiv.style.display = `block`
+    } else {
+        fichasAutomaticoDiv.style.display = `none`
+    }
 }
 
 for (var i = 0; i < 8; i++) {
@@ -22,6 +28,43 @@ for (var i = 0; i < 8; i++) {
             deck.push(`${cartas[j]}${naipes[k]}`)
             valorDeck.push(valorCartas[j])
         }
+    }
+}
+
+function carregarJogadores() {
+    let mesaJogador = document.getElementById(`mesa`)
+    for (var i = 1; i < 5; i++) {
+        let jogadores = document.createElement(`div`)
+        jogadores.id = `jogador${i}`
+        let maoJogadores = document.createElement(`div`)
+        maoJogadores.id = `maoJogador${i}`
+        let fichasJogadores = document.createElement(`div`)
+        fichasJogadores.id = `fichasJogador${i}`
+        let acoesJogadores = document.createElement(`div`)
+        acoesJogadores.className = `acoes`
+        let hitButton = document.createElement(`button`)
+        hitButton.onclick = ``
+        hitButton.innerHTML = `Hit`
+        let standButton = document.createElement(`button`)
+        standButton.onclick = ``
+        standButton.innerHTML = `Stand`
+        jogadores.appendChild(maoJogadores)
+        jogadores.appendChild(fichasJogadores)
+        acoesJogadores.appendChild(hitButton)
+        acoesJogadores.appendChild(standButton)
+        jogadores.appendChild(acoesJogadores)
+        mesaJogador.appendChild(jogadores)
+    }
+}
+
+function iniciar(numeroJogadoresParam, fichasInicialParam) {
+    carregarJogadores()
+    jogo.style.display = `block`
+    for (var i = 1; i <= numeroJogadoresParam; i++) {
+        let fichasJogador = document.getElementById(`fichasJogador${i}`)
+        let jogador = document.getElementById(`jogador${i}`)
+        jogador.style.display = `block`
+        fichasJogador.innerHTML = fichasInicialParam
     }
 }
 
