@@ -31,13 +31,15 @@ for (var i = 0; i < 8; i++) {
     }
 }
 
-function carregarJogadores() {
+function carregarJogadores(numeroJogadoresParam) {
     let mesaJogador = document.getElementById(`mesa`)
-    for (var i = 1; i < 5; i++) {
+    for (var i = 1; i <= numeroJogadoresParam; i++) {
         let jogadores = document.createElement(`div`)
         jogadores.id = `jogador${i}`
         let maoJogadores = document.createElement(`div`)
         maoJogadores.id = `maoJogador${i}`
+        let pontosJogadores = document.createElement(`div`)
+        pontosJogadores.id = `pontosJogador${i}`
         let fichasJogadores = document.createElement(`div`)
         fichasJogadores.id = `fichasJogador${i}`
         let acoesJogadores = document.createElement(`div`)
@@ -49,6 +51,7 @@ function carregarJogadores() {
         standButton.onclick = ``
         standButton.innerHTML = `Stand`
         jogadores.appendChild(maoJogadores)
+        jogadores.appendChild(pontosJogadores)
         jogadores.appendChild(fichasJogadores)
         acoesJogadores.appendChild(hitButton)
         acoesJogadores.appendChild(standButton)
@@ -58,12 +61,10 @@ function carregarJogadores() {
 }
 
 function iniciar(numeroJogadoresParam, fichasInicialParam) {
-    carregarJogadores()
+    carregarJogadores(numeroJogadoresParam)
     jogo.style.display = `block`
     for (var i = 1; i <= numeroJogadoresParam; i++) {
         let fichasJogador = document.getElementById(`fichasJogador${i}`)
-        let jogador = document.getElementById(`jogador${i}`)
-        jogador.style.display = `block`
         fichasJogador.innerHTML = fichasInicialParam
     }
 }
